@@ -83,7 +83,7 @@ class GameViewModel : ViewModel() {
         if (wordList.isEmpty()) {
             // gameFinished() should happen here
         } else {
-            word = wordList.removeAt(0)
+            word.value = wordList.removeAt(0)
         }
     }
 
