@@ -71,6 +71,12 @@ class GameFragment : Fragment() {
         // performs the code in gameFinished()
         // Make sure to call onGameFinishCompete to tell your viewmodel that the game finish event
         // was dealt with
+        viewModel.eventGameFinish.observe(this, Observer { hasFinished ->
+            if (hasFinished) {
+                gameFinished()
+                viewModel.onGameFinishComplete()
+            }
+        })
 
         return binding.root
 
